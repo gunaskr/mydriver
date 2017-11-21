@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.*;
-import java.util.logging.Logger;
 
 @RestController
 public class FileUpload {
@@ -27,7 +26,6 @@ public class FileUpload {
         System.out.println("Data:::::::::" + defaultSftpSessionFactory.getSession().isOpen());
         String localFileFullName = "C:\\\\ftp_files\\\\pocketftp.png";
         System.out.println("File Picked");
-        boolean result = false;
         try (InputStream input = new FileInputStream(new File(localFileFullName))) {
 
             //result = this.ftp.storeFile("/pub/examples/" + "image.png", input);
