@@ -1,13 +1,16 @@
-package com.lc.df.ftp.sync;
+package com.p2.mydrive.p2mydriveconfiguration;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
 @SpringBootApplication
+@EnableConfigServer
 @EnableDiscoveryClient
-public class FTPRemoteSynchronizer {
+public class P2MydriveConfigurationApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FTPRemoteSynchronizer.class, args);
+		SpringApplication.run(P2MydriveConfigurationApplication.class, args);
 	}
 }
