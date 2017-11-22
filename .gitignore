@@ -29,3 +29,5 @@ nbdist/
 
 ##Logging##
 logs/
+
+bin/
