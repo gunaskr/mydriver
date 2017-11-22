@@ -8,5 +8,7 @@
   <name>p2-mydrive-parent</name>
   <modules>
     <module>p2-mydrive-ftpservice</module>
+    <module>p2-mydrive-discovery</module>
+    <module>p2-mydrive-configuration</module>
   </modules>
 </project>
