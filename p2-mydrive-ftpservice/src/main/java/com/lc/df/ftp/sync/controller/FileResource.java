@@ -1,7 +1,10 @@
 package com.lc.df.ftp.sync.controller;
 
+import java.util.List;
 import java.util.Optional;
 
+import com.jcraft.jsch.JSchException;
+import com.jcraft.jsch.SftpException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.lc.df.ftp.sync.service.FileResourceService;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class FileResource {
@@ -32,9 +37,21 @@ public class FileResource {
 
 		return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("Error while uploading the file");
 	}
-	@RequestMapping(value = "/getFileList")
-	public void getFileList()
-	{  
+	@RequestMapping(value = "/getFileList/**" )
 
+	public List<String> getFileList(HttpServletRequest request)
+    {
+        List<String> list= null;
+        String uri= request.getRequestURI();
+
+        try {
+            list=FileResourceService.getFiles(uri);
+        } catch (JSchException e) {
+            e.printStackTrace();
+        } catch (SftpException e) {
+            e.printStackTrace();
+        }
+
+        return list;
 	}
 }

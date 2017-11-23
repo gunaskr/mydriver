@@ -50,7 +50,7 @@ public class FileResourceTest {
 	public void testGetFileServiceReturnsListOfFiles() throws Exception {
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/getFileList/FolderA/FolderB"))
 		.andExpect(status().isOk())
-		.andExpect(content().json(objectMapper.writeValueAsString(Arrays.asList("file1","file2"))));
+		.andExpect(content().json(objectMapper.writeValueAsString(Arrays.asList("file1.txt","file2.txt"))));
 	}
 
 }
