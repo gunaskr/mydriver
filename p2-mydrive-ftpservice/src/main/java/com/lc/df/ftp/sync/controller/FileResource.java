@@ -32,4 +32,9 @@ public class FileResource {
 
 		return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("Error while uploading the file");
 	}
+	@RequestMapping(value = "/getFileList")
+	public void getFileList()
+	{  
+
+	}
 }
