@@ -42,7 +42,7 @@ public class FileResourceTest {
 	@Test
 	public void testGetFileServiceExists() throws Exception {
 
-		this.mockMvc.perform(MockMvcRequestBuilders.get("/getFileList")).andExpect(status().isOk());
+		this.mockMvc.perform(MockMvcRequestBuilders.get("/getFileList/")).andExpect(status().isOk());
 
 	}
 	
